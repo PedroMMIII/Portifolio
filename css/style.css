@@ -97,9 +97,21 @@ section.topo-do-site .flex {
 }
 
 .topo-do-site .txt-topo-site p {
+    font-size: 18px;
+    font-weight: bold;
     color: #fff;
     margin: 40px 0px;
+    animation: typewriter 1.7s 1;
 }
+
+@keyframes typewriter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
 
 .topo-do-site .img-topo-site img {
     position: relative;
@@ -111,6 +123,7 @@ section.topo-do-site .flex {
     0% {
         top: 0px;
     }
+    
     100% {
         top: 30px;
     }
@@ -149,3 +162,65 @@ section.especialidades .flex {
     font-size: 25px;
     margin: 15px 0px;
 }
+
+/* Estilo sobre */
+section.sobre {
+    padding: 40px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: #00ff08;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0px;
+    text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social a {
+    text-decoration: none;
+}
+
+.sobre .txt-sobre .btn-social button svg {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
+.sobre .txt-sobre .btn-social button {
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    margin: 0px 3px;
+    border-radius: 30%;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .sobre .txt-sobre .btn-social button:hover {
+    animation: zoom 1.5s infinite;
+  }
+  
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
