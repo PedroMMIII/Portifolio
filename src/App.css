@@ -1,18 +1,10 @@
 /************ Fonts customizadas ************/
-@font-face {
-    font-family: Centra; /* Nome da fonte personalizada */
-    src: url('@/assets/fonts/CentraNo2-Bold.ttf'); /* Caminho para o arquivo TTF */
-    font-weight: 700; /* Peso da fonte (bold) */
-}
-@font-face {
-    font-family: Centra; 
-    src: url('@/assets/fonts/CentraNo2-Medium.ttf');
-    font-weight: 500; /* Peso da fonte (médio) */
-}
-@font-face {
-    font-family: Centra; 
-    src: url('@/assets/fonts/CentraNo2-Book.ttf');
-    font-weight: 400; /* Peso da fonte (normal) */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --fontQuicksand: "Quicksand", serif;
+    --fontCourgette: "Courgette", serif;
+    --fontKaniThin: "Kanit", serif;
 }
 
 /************ Estilo básico para todos os elementos ************/
@@ -31,9 +23,9 @@ body {
     font-weight: 400; /* Peso padrão da fonte */
     overflow-x: hidden; /* Removendo rolagem horizontal */
     position: relative; 
-    background-color: #121212; /* Cor de fundo escuro */
-    color: #fff; /* Cor do texto branca */
-    font-family: 'Centra', sans-serif; /* Usando a fonte personalizada */
+    background-color: #121212 !important; /* Cor de fundo escuro */
+    color: #fff !important; /* Cor do texto branca */
+    font-family: var(--fontQuicksand) !important; /* Usando a fonte personalizada */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,6 +33,35 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0; /* Removendo padding padrão */
     line-height: normal; /* Mantendo a altura da linha normal */
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+  }
+  
+  @media (min-width:1700px) {
+      main .container {
+          max-width: 100%;
+          padding: 0 150px;
+      }
+  }
+  
+  p.success {
+      color: green;
+  }
+  
+  p.danger {
+      color: red;
+  }
 
 /************ Estilo da Navbar ************/
 nav.navbar {
@@ -215,12 +236,75 @@ nav.navbar .navbar-toggler:active {
     outline: none; 
     box-shadow: none; 
 }
-
-/* Estilo global para o App */
-.App {
-    text-align: center; 
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    flex-direction: column; 
-}
+/* Banner */
+.banner {
+    margin-top: 0;
+    padding: 260px 0 100px 0;
+    background-image: url('./assets/img/banner-bg.png');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .banner .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-family: var(--fontCourgette);
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .banner h1 {
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .banner p {
+    color: #B8B8B8;
+    font-size: 18px;
+    font-family: var(--fontKaniThin);
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    width: 96%;
+  }
+  .banner button {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 60px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+  }
+  .banner button svg {
+    font-size: 25px;
+    margin-left: 10px;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+  }
+  .banner button:hover svg {
+    margin-left: 25px;
+  }
+  .banner img {
+    animation: updown 3s linear infinite;
+  }
+  @keyframes updown {
+      0% {
+          transform: translateY(-20px);
+      }
+      50% {
+          transform: translateY(20px);
+      }
+      100% {
+          transform: translateY(-20px);
+      }
+  }
+  .txt-rotate > .wrap {
+    border-right: 0.08em solid #666;
+  }

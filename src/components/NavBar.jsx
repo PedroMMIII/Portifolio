@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"; // Importando os hooks useState e useEffect do React
 import { Navbar, Container, Nav } from "react-bootstrap"; // Importando componentes do Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '/src/assets/img/logo.svg'; // Importando imagem do logo
 import navIcon1 from '/src/assets/img/nav-icon1.svg'; // Importando ícone de rede social 1
 import navIcon2 from '/src/assets/img/nav-icon2.svg'; // Importando ícone de rede social 2
@@ -34,53 +35,72 @@ export const NavBar = () => {
     setActiveLink(value);
   };
 
-  return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}> {/* Navbar com classe "scrolled" quando estiver rolando */}
-      <Container>
-        <Navbar.Brand href="#home"> {/* Logo que redireciona para a página inicial */}
-          <img src={logo} alt="Logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-nav"> {/* Botão para toggle do menu */}
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="navbar-nav"> {/* Menu colapsável */}
-          <Nav className="me-auto">
-            <Nav.Link // Link para a seção Home
-              href="#home"
-              className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => onUpdateActiveLink('home')}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link // Link para a seção Habilidades
-              href="#skills"
-              className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => onUpdateActiveLink('skills')}
-            >
-              Habilidades
-            </Nav.Link>
-            <Nav.Link // Link para a seção Projetos
-              href="#projects"
-              className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => onUpdateActiveLink('projects')}
-            >
-              Projetos
-            </Nav.Link>
-          </Nav>
-          <span className="navbar-text">
-            <div className="social-icon">
-              <a href="#"><img src={navIcon1} alt="Ícone Social 1" /></a>
-              <a href="#"><img src={navIcon2} alt="Ícone Social 2" /></a>
-              <a href="#"><img src={navIcon3} alt="Ícone Social 3" /></a>
-            </div>
-            <button className="vvd" onClick={() => console.log('connect')}> {/* Botão para conexão */}
-              <span>Vamos nos conectar</span>
-            </button>
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
+  // Navbar principal
+// Navbar principal
+return (
+  <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+    {/* Container centralizado */}
+    <Container className="d-flex justify-content-center">
+      {/* Logo que redireciona para a página inicial */}
+      <Navbar.Brand href="#home">
+        <img src={logo} alt="Logo" />
+      </Navbar.Brand>
+      
+      {/* Botão para toggle do menu */}
+      <Navbar.Toggle aria-controls="navbar-nav">
+        <span className="navbar-toggler-icon"></span>
+      </Navbar.Toggle>
+      
+      {/* Menu colapsável */}
+      <Navbar.Collapse id="navbar-nav">
+        {/* Links centralizados com espaçamento */}
+        <Nav className="me-auto justify-content-center gap-3">
+          {/* Link para a seção Home */}
+          <Nav.Link
+            href="#home"
+            className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
+            onClick={() => onUpdateActiveLink('home')}
+          >
+            Home
+          </Nav.Link>
+          
+          {/* Link para a seção Habilidades */}
+          <Nav.Link
+            href="#skills"
+            className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
+            onClick={() => onUpdateActiveLink('skills')}
+          >
+            Habilidades
+          </Nav.Link>
+          
+          {/* Link para a seção Projetos */}
+          <Nav.Link
+            href="#projects"
+            className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
+            onClick={() => onUpdateActiveLink('projects')}
+          >
+            Projetos
+          </Nav.Link>
+        </Nav>
+        
+        {/* Ícones sociais e botão alinhados */}
+        <span className="navbar-text d-flex align-items-center">
+          {/* Ícones sociais */}
+          <div className="social-icon">
+            <a href="#"><img src={navIcon1} alt="Ícone Social 1" /></a>
+            <a href="#"><img src={navIcon2} alt="Ícone Social 2" /></a>
+            <a href="#"><img src={navIcon3} alt="Ícone Social 3" /></a>
+          </div>
+          
+          {/* Botão para conexão */}
+          <button className="vvd" onClick={() => console.log('connect')}>
+            <span>Vamos nos conectar</span>
+          </button>
+        </span>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+);
 };
 
 export default NavBar;
