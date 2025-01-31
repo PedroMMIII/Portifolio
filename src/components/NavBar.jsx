@@ -7,7 +7,7 @@ import navIcon2 from '/src/assets/img/nav-icon2.svg'; // Importando ícone de re
 import navIcon3 from '/src/assets/img/nav-icon3.svg'; // Importando ícone de rede social 3
 
 // Componente Navbar
-export const NavBar = () => {
+const NavBar = () => {
   // Estado para o link ativo
   const [activeLink, setActiveLink] = useState('home');
   // Estado para verificar se a página foi rolada
