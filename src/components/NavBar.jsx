@@ -88,14 +88,16 @@ return (
           {/* Ícones sociais */}
           <div className="social-icon">
             <a href="#"><img src={navIcon1} alt="Ícone Social 1" /></a>
-            <a href="#"><img src={navIcon2} alt="Ícone Social 2" /></a>
-            <a href="#"><img src={navIcon3} alt="Ícone Social 3" /></a>
+            <a href="https://github.com/PedroMMIII" target="_blank"><img src={navIcon2} alt="Ícone Social 2" /></a>
+            <a href="https://www.instagram.com/itspedromonteiro?igsh=aXFocHYyaTVtNjRw" target="_blank" ><img src={navIcon3} alt="Ícone Social 3" /></a>
           </div>
           
           {/* Botão para conexão */}
-          <button className="vvd" onClick={() => console.log('connect')}>
-            <span>Vamos nos conectar</span>
-          </button>
+          <a href="#connect">
+            <button className="vvd">
+              <span>Vamos nos conectar</span>
+            </button>
+          </a>
         </span>
       </Navbar.Collapse>
     </Container>
